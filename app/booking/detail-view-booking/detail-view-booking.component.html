@@ -1,0 +1,45 @@
+<section id="detailEvent">
+    <div class="container">
+      <div class="section-title">
+        <h1><i class="icofont icofont-film"></i>Booking Summary</h1>
+      </div>
+      <hr />
+      <div class="details">
+        <div class="row flexbox-center">
+          <div class="col-lg-7">
+            <div class="eventDetails-content">
+              <h2>Booking Details</h2>
+              <br />
+              <ul>
+                
+               
+                
+                <li>
+                  <div class="eventDetail-left">Total No. of Tickets:</div>
+                  <div class="eventDetail-right">
+                    {{ booking.totalTickets }}
+                  </div>
+                </li>
+                <li>
+                  <div class="eventDetail-left">Booking Date:</div>
+                  <div class="eventDetail-right">
+                    {{ booking.bookingDate }}
+                  </div>
+                </li>
+                <li>
+                  <div class="eventDetail-left">Total Cost:</div>
+                  <div class="eventDetail-right">
+                    {{ booking.totalCost }}
+                  </div>
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <a [routerLink]="['/event']" class="theme-btn"
+          ><i class="icofont-ticket"></i>Back to Events</a
+        >
+      </div>
+    </div>
+  </section>
+  

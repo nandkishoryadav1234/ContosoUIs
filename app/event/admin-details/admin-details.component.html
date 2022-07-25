@@ -1,0 +1,77 @@
+
+<section id="detailEvent">
+  <div class="fab-container">
+    <div class="fab fab-icon-holder">
+      <a [routerLink]="['/event/admin/list']">
+        <i class="fas fa-backward"></i>
+      </a>
+    </div>
+
+    <ul class="fab-options">
+      <li>
+        <span class="fab-label">Events</span>
+        <div class="fab-icon-holder">
+          <a [routerLink]="['/event/admin/list']">
+            <i class="fas fa-film"></i>
+          </a>
+        </div>
+      </li>
+    
+      <li>
+        <span class="fab-label">Bookings</span>
+        <div class="fab-icon-holder">
+          <i class="fas fa-ticket-alt"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <div class="container">
+    <div class="details">
+      <div class="row flexbox-center">
+        <div class="col-lg-5 text-lg-left text-center">
+          <div class="eventDetails-content">
+            <img src="assets/img/portfolio5.png" alt="" />
+          </div>
+        </div>
+        <div class="col-lg-7">
+          <div class="eventDetails-content">
+            <h2>{{ event.eventName }}</h2>
+            <p>{{event.eventDetails}}</p>
+           
+            <ul>
+              <li>
+                <div class="eventDetail-left">Event:</div>
+                <div class="eventDetail-right">
+                  {{ event.eventName }}
+                </div>
+              </li>
+              
+              <li>
+                <div class="eventDetail-left">Language:</div>
+                <div class="eventDetail-right">{{ event.eventLanguage }}</div>
+              </li>
+              <li>
+                <div class="eventDetail-left">Location:</div>
+                <div class="eventDetail-right">{{ event.eventLocaion }}</div>
+              </li>
+              <li>
+                <div class="eventDetail-left">Event Start Date:</div>
+                <div class="eventDetail-right">{{ event.eventStartDate}}</div>
+              </li>
+              <li>
+                <div class="eventDetail-left">Event End Date:</div>
+                <div class="eventDetail-right">{{ event.eventEndDate}}</div>
+              </li>
+            </ul>
+          </div>
+        </div>
+      </div>
+      <a [routerLink]="['/event/update', event.eventId]" class="theme-btn1"
+        ><i class="icofont-ticket"></i>Update</a
+      >
+      <button class="theme-btn" (click)="removeEvent(event.eventId)">
+        <i class="icofont-ticket"></i>Delete
+      </button>
+    </div>
+  </div>
+</section>

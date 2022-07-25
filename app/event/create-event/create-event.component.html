@@ -1,0 +1,108 @@
+
+
+<section>
+  <div class="custom-container">
+    <h3 style="color: red">{{ errorMessage }}</h3>
+    <form [formGroup]="eventForm" (ngSubmit)="addEvent()">
+      <div class="col-lg-6 text-center text-lg-left">
+        <div class="section-title">
+          <h1>Add Event</h1>
+        </div>
+      </div>
+      <hr />
+      <div class="form-row">
+        <div class="form-group">
+          <div class="input-data">
+            <input
+              type="text"
+              class="form-control"
+              formControlName="eventName"
+              required
+            />
+            <div class="underline"></div>
+            <label for="">Event Name</label>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <div class="row">
+            <div class="col input-data">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="eventDetails"
+                required
+              />
+              <div class="underline"></div>
+              <label for="">Event Details</label>
+            </div>
+            <div class="col input-data">
+              <input
+                type="date"
+                class="form-control"
+                formControlName="eventStartDate"
+                required
+              />
+              <div class="underline"></div>
+              <p>Event StartDate</p>
+            </div>
+            <div class="col input-data">
+              <input
+                type="date"
+                class="form-control"
+                formControlName="eventEndDate"
+                required
+              />
+              <div class="underline"></div>
+              
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <div class="row">
+           
+            <div class="col input-data">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="eventLanguage"
+                required
+              />
+              <div class="underline"></div>
+              <label for="">Event Language</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div class="form-row">
+        <div class="form-group">
+          <div class="row">
+           
+            <div class="col input-data">
+              <input
+                type="text"
+                class="form-control"
+                formControlName="eventLocaion"
+                required
+              />
+              <div class="underline"></div>
+              <label for="">Event Location</label>
+            </div>
+          </div>
+        </div>
+      </div>
+      <div>
+        <button
+          type="submit"
+          class="btn btn-primary"
+          [disabled]="!eventForm.valid"
+        >
+          Add Event
+        </button>
+      </div>
+    </form>
+  </div>
+</section>

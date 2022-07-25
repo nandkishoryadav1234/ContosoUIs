@@ -1,0 +1,135 @@
+
+
+<div class="wrapper">
+    
+    <main class="main">
+      <section class="section">
+        <ul class="adminList">
+          <li class="adminList__item">
+            <a
+              href="#"
+              style="pointer-events: none"
+              class="adminList-link focus--box-shadow"
+            >
+            
+            <div class="adminList-wrapper">
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name"
+                  ><strong>BookingId</strong></span>
+                
+              </div>
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name"
+                  ><strong>UserId</strong></span
+                >
+              </div>
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name"
+                  ><strong>EventId</strong>
+                </span>
+              </div>
+              <div class="adminList-wrapper">
+                <div class="adminList-element adminList-inform">
+                  <span class="adminList-inform-name"
+                    ><strong>Total No. of Tickets</strong></span>
+                  
+                </div>
+                <div class="adminList-element adminList-inform">
+                  <span class="adminList-inform-name"
+                    ><strong>Total Cost</strong></span
+                  >
+                </div>
+                <div class="adminList-element adminList-inform">
+                  <span class="adminList-inform-name"
+                    ><strong>Booking Date</strong>
+                  </span>
+                </div>
+                <div class="adminList-element adminList-setting">
+                  <span></span>
+                </div>
+              </div>
+            </div>
+           
+            </a>
+          </li>
+        </ul>
+        <hr />
+        <ul class="adminList">
+          <li class="adminList__item" *ngFor="let bk of bookings">
+            <a
+            [routerLink]="['/booking/view', bk.bookingId]"
+              class="adminList-link focus--box-shadow"
+            >
+              
+            <div class="adminList-wrapper">
+              <div class="adminList-element adminList-inform">
+                <span class="adminList-inform-name">{{
+                  bk.bookingId
+                }}</span>
+              </div>
+            <div class="adminList-wrapper">
+                <div class="adminList-element adminList-inform">
+                  <span class="adminList-inform-name">{{
+                    bk.userId
+                  }}</span>
+                </div>
+                <div class="adminList-element adminList-inform">
+                  <span class="adminList-inform-name">{{
+                    bk.eventId
+                  }}</span>
+
+                </div>
+                <!-- <div class="adminList-element adminList-inform">
+                <label></label>  <select  [(ngModel)]="selectedname" (change)="onChangeName($event)">           
+              <option [label] ="name"select  *ngFor="let name of NAMES" [selected]="selected" [value]="name">{{name}}</option>
+               </select>  
+            </div> -->
+
+            
+
+          <div ng-controller="ctrl">
+            <ul>
+             <li class="basket-item" ng-repeat="product in products">
+              <!-- <div class="product-item-description">
+                  <h2><a href="product.html">{{event.title}}</a></h2>
+                  <a href="#">Description</a>
+              </div> -->
+              <div class="adminList-element adminList-inform">
+                  <input type="number" name=quantity ng-model="product.quantity"> st
+                  <p><b>quantiy</b>1-5</p>
+              </div>
+              <p class="product-item-price">x {{event.prices[0].amount}} {{event.prices[0].currency}}</p>
+              <p class="product-item-total" >{{event.prices[0].amount * event.quantity}}</p>
+              </li>
+              <p>{{totalCost()}}</p>
+             </ul>      
+          </div>
+                
+
+                <div class="adminList-element adminList-inform">
+                  <span class="adminList-inform-name">{{ bk.totalTickets }}</span>
+                </div>
+                <div class="adminList-element adminList-inform">
+                  <span class="adminList-inform-name">{{ bk.totalCost }}</span>
+                </div>
+                <div class="adminList-element adminList-inform">
+                  <span class="adminList-inform-name">{{ bk.bookingDate }}</span>
+                </div>
+                <div class="adminList-element adminList-setting">
+                  <button
+                    class="focus--box-shadow"
+                    type="button"
+                    [routerLink]="['/booking/view', bk.bookingId]"
+                  >
+                    <i class="icofont-caret-right"></i>
+                  </button>
+                </div>
+              </div>
+            </div>
+            </a>
+          </li>
+        </ul>
+      </section>
+    </main>
+  </div>
+  

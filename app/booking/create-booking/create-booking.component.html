@@ -1,0 +1,32 @@
+<p>create-booking works!</p>
+<section id="booking">
+    <div class="custom-container">
+      <h3 style="color: red">{{ errorMessage }}</h3>
+      <form [formGroup]="bookingForm" (ngSubmit)="addBooking()">
+        <div class="form-row">
+          
+         
+        </div>
+        <div class="form-group">
+          <div class="form-row">
+            <div class="date">
+              <input
+                type="date"
+                class="form-control"
+                formControlName="bookingDate"
+              />
+            </div>
+          </div>
+        </div>
+        <div>
+          <button [routerLink]="['/event']" type="submit" class="btn btn-danger">
+            Cancel
+          </button>
+          <button type="submit" class="btn btn-primary">
+            Proceed <i class="icofont-long-arrow-right"></i>
+          </button>
+        </div>
+      </form>
+    </div>
+  </section>
+  

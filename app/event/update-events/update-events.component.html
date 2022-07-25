@@ -1,0 +1,109 @@
+
+
+<section id="detailEvent">
+  <div class="fab-container">
+    <div class="fab fab-icon-holder">
+      <a [routerLink]="['/event/admin/list']">
+        <i class="fas fa-backward"></i>
+      </a>
+    </div>
+
+    <ul class="fab-options">
+      <li>
+        <span class="fab-label">Events</span>
+        <div class="fab-icon-holder">
+          <a [routerLink]="['/event/admin/list']">
+            <i class="fas fa-film"></i>
+          </a>
+        </div>
+      </li>
+      
+      <li>
+        <span class="fab-label">Bookings</span>
+        <div class="fab-icon-holder">
+          <i class="fas fa-ticket-alt"></i>
+        </div>
+      </li>
+    </ul>
+  </div>
+  <form (ngSubmit)="updateEvent()">
+    <div class="container">
+      <div class="details">
+        <div class="row flexbox-center">
+          <div class="col-lg-5 text-lg-left text-center">
+            <div class="eventDetails-content">
+              <img src="assets/img/portfolio5.png" alt="" />
+            </div>
+          </div>
+          <div class="col-lg-7">
+            <div class="eventDetails-content">
+              <h2>{{ event.eventName }}</h2>
+              <p>{{ event.eventDetails }}</p>
+
+              <ul>
+                <li>
+                  <div class="eventDetail-left">Event:</div>
+                  <input
+                    class="eventDetail-right"
+                    [(ngModel)]="event.eventName"
+                    name="name"
+                  />
+                </li>
+                <li>
+                  <div class="eventDetail-left">Event Details:</div>
+                  <input
+                    class="eventDetail-right"
+                    [(ngModel)]="event.eventDetails"
+                    name="text"
+                  />
+                </li>
+                <li>
+                  <div class="eventDetail-left">Event StartDate:</div>
+                  <input
+                    type="date"
+                    class="eventDetail-right"
+                    [(ngModel)]="event.eventStartDate"
+                    name="date"
+                  />
+                </li>
+                <li>
+                  <div class="eventDetail-left">Event EndDate:</div>
+                  <input
+                    type="date"
+                    class="eventDetail-right"
+                    [(ngModel)]="event.eventEndDate"
+                    name="date"
+                  />
+                </li>
+                <li>
+                  <div class="eventDetail-left">Event Language:</div>
+                  <input
+                    class="eventDetail-right"
+                    [(ngModel)]="event.eventLanguage"
+                    name="language"
+                  />
+                </li>
+                <li>
+                  <div class="eventDetail-left">Event Location:</div>
+                  <input
+                    class="eventDetail-right"
+                    [(ngModel)]="event.eventLocaion"
+                    name="location"
+                  />
+                </li>
+              </ul>
+            </div>
+          </div>
+        </div>
+        <button type="submit" class="theme-btn1">
+          <i class="icofont-ticket"></i>Update
+        </button>
+        <a
+          [routerLink]="['/event/admin/details', event.eventId]"
+          class="theme-btn"
+          ><i class="icofont-ticket"></i> Cancel</a
+        >
+      </div>
+    </div>
+  </form>
+</section>
